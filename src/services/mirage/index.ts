@@ -1,7 +1,5 @@
 import { Model, belongsTo, createServer, hasMany } from 'miragejs';
 
-import { sendResponse } from 'next/dist/server/image-optimizer';
-
 export function makeServer() {
   const server = createServer({
     models: {
@@ -20,8 +18,8 @@ export function makeServer() {
             name: 'Europa',
             slug: 'europa',
             continentPhrase: "O continente mais antigo.",
-            slideImage: "/Europa.png",
-            bannerImage: '/EuropaBanner.png',
+            slideImage: "/Country/Europa.png",
+            bannerImage: '/Country/EuropaBanner.png',
             continentBio: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste',
             countrys: 50,
             rankCitiesVisited: 27,
@@ -32,8 +30,8 @@ export function makeServer() {
             name: 'Ásia',
             slug: 'asia',
             continentPhrase: "O continente multicultural.",
-            slideImage: "https://images.unsplash.com/photo-1512575217141-64978dcac41c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-            bannerImage: "https://images.unsplash.com/photo-1600891964743-7bd0b11b2789?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974",
+            slideImage: "/Country/Asia.png",
+            bannerImage: "/Country/AsiaBanner.png",
             continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
             countrys: 50,
             rankCitiesVisited: 28,
@@ -44,8 +42,8 @@ export function makeServer() {
             name: 'América do Sul',
             slug: 'america-do-sul',
             continentPhrase: "Neque porro quisquam.",
-            slideImage: "https://images.unsplash.com/photo-1552428386-840770ff7588?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80",
-            bannerImage: "https://images.unsplash.com/photo-1560455974-f8f8d2927175?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633",
+            slideImage: "/Country/America-Do-Sul.png",
+            bannerImage: "/Country/America-Do-SulBanner.png",
             continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
             countrys: 12,
             rankCitiesVisited: 3,
@@ -56,9 +54,8 @@ export function makeServer() {
             name: 'América do Norte',
             slug: 'america-do-norte',
             continentPhrase: 'Neque porro quisquam',
-            slideImage: 'https://images.unsplash.com/photo-1619013971011-f901cfa5397b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470',
-            bannerImage: "https://images.unsplash.com/photo-1605130284535-11dd9eedc58a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-            continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
+            slideImage: "/Country/America-Do-Norte.png",
+            bannerImage: "/Country/America-Do-NorteBanner.png",
             countrys: 24,
             rankCitiesVisited: 10,
             languages: 6,
@@ -68,8 +65,8 @@ export function makeServer() {
             name: 'África',
             slug: 'africa',
             continentPhrase: "Integer viverra felis.",
-            slideImage: "https://images.unsplash.com/photo-1591516051467-22161cd13281?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2161&q=80",
-            bannerImage: "https://images.unsplash.com/photo-1527085118757-67fcf1304546?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1668",
+            slideImage: "/Country/Africa.png",
+            bannerImage: "/Country/AfricaBanner.png",
             continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
             countrys: 55,
             rankCitiesVisited: 9,
@@ -80,8 +77,8 @@ export function makeServer() {
             name: 'Oceania',
             slug: 'oceania',
             continentPhrase: "Vestibulum ante ipsum.",
-            slideImage: "https://images.unsplash.com/photo-1496285705189-c290050257f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1564&q=80",
-            bannerImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2130",
+            slideImage: "/Country/Oceania.png",
+            bannerImage: "/Country/OceaniaBanner.png",
             continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
             countrys: 14,
             rankCitiesVisited: 7,
@@ -182,7 +179,7 @@ export function makeServer() {
             city: "Nova York",
             country: "EUA",
             continentId: 4,
-            image: "https://images.unsplash.com/photo-1553605607-21e496a1c865?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bmV3JTIweW9ya3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60",
+            image: "https://cdn.pixabay.com/photo/2017/02/11/11/27/nyc-2057534__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/10/16/22/united-26177__340.png",
           },
           {
@@ -190,7 +187,7 @@ export function makeServer() {
             city: "Miami",
             country: "EUA",
             continentId: 4,
-            image: "https://media.istockphoto.com/photos/miami-florida-usa-downtown-skyline-over-macaurther-causeway-picture-id1346227684?b=1&k=20&m=1346227684&s=170667a&w=0&h=I2jm65rfULyoUKtGTYpx-Z34cyNCD6L7959dut32DA8=",
+            image: "https://cdn.pixabay.com/photo/2018/01/27/23/46/toronto-3112508__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/10/16/22/united-26177__340.png",
           },
           {
@@ -206,7 +203,7 @@ export function makeServer() {
             city: "Cancun",
             country: "México",
             continentId: 4,
-            image: "https://media.istockphoto.com/photos/cancun-beach-with-boat-picture-id956105474?b=1&k=20&m=956105474&s=170667a&w=0&h=M5a0Ns9bX64W0Zg9CyO9SK8qjF9vb9QOV2uL7C9hZRk=",
+            image: "https://cdn.pixabay.com/photo/2016/03/04/05/12/cancun-1235489__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/10/23/24/mexico-26989__480.png",
           },
           {
@@ -214,7 +211,7 @@ export function makeServer() {
             city: "Johannesburg",
             country: "África do Sul",
             continentId: 5,
-            image: "https://media.istockphoto.com/photos/johannesburg-sunset-cityscape-with-hillbrow-tower-picture-id900786810?b=1&k=20&m=900786810&s=170667a&w=0&h=zAzAnGnvLPyjmk9TgMIPjR6lTlaV8ZES4Dpt3CsZZMc=",
+            image: "https://cdn.pixabay.com/photo/2019/07/07/10/56/johannesburg-4322256__480.jpg",
             flag: "https://cdn.pixabay.com/photo/2013/07/13/14/17/south-africa-162425__340.png",
           },
           {
@@ -222,7 +219,7 @@ export function makeServer() {
             city: "Cairo",
             country: "Egito",
             continentId: 5,
-            image: "https://images.unsplash.com/photo-1626622036405-66f0d91bf4b0?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fpcm98ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500",
+            image: "https://cdn.pixabay.com/photo/2017/01/14/20/55/cairo-1980350__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/10/23/13/egypt-26909__480.png",
           },
           {
@@ -230,7 +227,7 @@ export function makeServer() {
             city: "Dubai",
             country: "Emirados Árabes",
             continentId: 5,
-            image: "https://images.unsplash.com/photo-1583499882110-688e720b025e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZHViYWl8ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+            image: "https://cdn.pixabay.com/photo/2016/01/04/06/26/dubai-1120373__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/10/23/01/united-arab-emirates-26815_960_720.png",
           },
           {
@@ -238,7 +235,7 @@ export function makeServer() {
             city: "Sydney",
             country: "Austrália",
             continentId: 6,
-            image: "https://images.unsplash.com/photo-1521512477127-5b3c1de1202d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80",
+            image: "https://cdn.pixabay.com/photo/2014/05/24/01/09/sydney-352492__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2012/04/11/15/43/australia-28586_960_720.png"
           },
           {
@@ -246,7 +243,7 @@ export function makeServer() {
             city: "Auckland",
             country: "Nova Zelãndia",
             continentId: 6,
-            image: "https://images.unsplash.com/photo-1595125990323-885cec5217ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+            image: "https://cdn.pixabay.com/photo/2017/03/20/22/17/auckland-2160551__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2013/07/13/14/16/new-zealand-162373_960_720.png"
           }
         ]
@@ -261,17 +258,11 @@ export function makeServer() {
 
       this.get('/continents/:slug', (schema, request) => {
         const slug = request.params.slug;
-
-        console.log("SLUG:", slug)
-
         return schema.db.continents.findBy({ slug: slug});
       })
 
       this.get('/cities/:continentId', (schema, request) => {
         const continentId = request.params.continentId;
-
-        console.log("ContinentID:", continentId)
-
         return schema.db.cities.where({continentId: continentId})
       })
 

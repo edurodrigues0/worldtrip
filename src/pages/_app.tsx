@@ -1,7 +1,10 @@
 import "swiper/css/bundle";
-import "../styles/swiperGlobal.css";
+import "../styles/slider.css";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, Flex } from '@chakra-ui/react';
 
 import { ContinentProvider } from "../context/ContinentContext";
 import { Header } from "../components/Header";
@@ -12,19 +15,23 @@ if(process.env.NODE_ENV === 'development') {
   makeServer();
 }
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={global}>
       <ContinentProvider>
-        
-        <Box
-          maxW={1440}
-          m='0 auto'
+        <Flex
+          w="100vw"
+          h="100vh"
         >
-          <Header />
-          <Component {...pageProps} />
-        </Box>
-        
+          <Box
+            maxW={1440}
+            m='0 auto'
+          >
+            <Header />
+            <Component {...pageProps} />
+          </Box>
+        </Flex>
       </ContinentProvider>
     </ChakraProvider>
   )

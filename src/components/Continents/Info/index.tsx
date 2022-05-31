@@ -1,5 +1,4 @@
-import { Box, Button, HStack, Text, Tooltip } from "@chakra-ui/react";
-
+import { HStack } from "@chakra-ui/react";
 import { InfoItem } from "./InfoItem";
 
 interface InfoProps {
@@ -10,7 +9,7 @@ interface InfoProps {
 
 export function Info({rankCitiesVisited, countrys, languages }: InfoProps) {
   return (
-    <HStack spacing="2.6rem">
+    <HStack mt={["5.5rem", "0"]} spacing={["8rem","2.6rem"]}>
       <InfoItem 
         infoAmount={countrys}
         infoAmountDescription='países'

@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Worldtrip
+
+Nesse desafio foi criado uma aplicação para treinar a interface com Chakra-ui, o prmeiro objetivo foi desenvolver toda interface usando Chakra-ui e o segundo objetivo foi trabalhar reponsividade da aplicação. A aplicação foi criado com Next.Js do zero e seguindo layout do [Figma](https://www.figma.com/file/iAbunvmSwwXxvOV65OlDSM/Desafio-1-M%C3%B3dulo-4-ReactJS-(Copy)?node-id=49%3A2).
+
+# Chakra-ui
+
+[Chakra-ui](https://chakra-ui.com/) é um design system poderoso e que pode aumentar consideravelmente sua produtividade ao desenvolver interfaces.
+
+# Swiper ReactJS
+
+Como Chakra-ui não possui um componente slides/carousel, foi utilizado a lib [Swiper](https://swiperjs.com/react) para implementar a funcionalidade apresentada na página Home.
+
+# Pixbay
+
+Para as imagens utilizadas na aplicação foi utilizado o banco de images do pixbay onde possui mais de 1 milhão de imagens, fotos e vídeos grátis.
 
 ## Getting Started
 
-First, run the development server:
+Primeiro, rode o ambiente de desenvolvedor:
 
 ```bash
 npm run dev
@@ -10,25 +24,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Abra [http://localhost:3000](http://localhost:3000) em seu browser para ver o resultado.

@@ -1,7 +1,3 @@
-import "swiper/css";
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
 import { Link, Text } from "@chakra-ui/react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -34,14 +30,14 @@ export function Slides() {
               justifyContent="center"
               flexDirection="column"
               bgImage={continent.slideImage}
-              bgRepeat="round"
+              bgRepeat={"round"}
               _hover={{ textDecoration: 'none'}}
               href={`/continent/${continent.slug}`}
             >
-              <Text fontSize="3rem" fontWeight="bold">
+              <Text fontSize={["5rem", "3rem"]} fontWeight="bold">
                 {continent.name}
               </Text>
-              <Text fontSize="1.5rem" fontWeight="bold">
+              <Text fontSize={["2.8rem", "1.5rem"]} fontWeight="bold">
                 {continent.continentPhrase}
               </Text>
             </Link>

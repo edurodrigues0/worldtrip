@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 
 interface RankedCitiesVisitedProps {
   cityName: string;
@@ -13,23 +13,32 @@ export function RankedCitiesVisited({
   image,
   flag,
 }: RankedCitiesVisitedProps) {
+  const WideBorderVersion = useBreakpointValue({
+    base: "0.5rem solid",
+    lg: '1px solid'
+  })
   return (
-    <Box w="16rem" h="17.4rem" bg="Light.100" borderRadius="4px">
-      <Image src={image} alt={cityName} borderTopRadius="4px" h="10.8rem" w='100%' />
+    <Box w={["55rem","16rem"]} h={["65rem","17.4rem"]} bg="Light.100" borderRadius={["1rem", "0.25rem"]}>
+      <Image
+        src={image}
+        alt={cityName}
+        borderTopRadius={["1rem", "0.25rem"]}
+        h={["40rem","10.8rem"]}
+        w='100%'
+      />
       <Flex
         w="100%"
-        h="6.6rem"
         p="1.125rem 1.5rem 1.56rem"
         justify="space-between"
-        borderX="1px solid"
-        borderBottom="1px solid"
-        borderBottomRadius="4px"
+        borderX={WideBorderVersion}
+        borderBottom={WideBorderVersion}
+        borderBottomRadius={["1rem", "0.25rem"]}
         borderColor="rgba(255, 186, 8, 0.5)"
       >
-        <Box>
+        <Box m={['4rem 2rem', "0rem"]}>
           <Text
             fontWeight={600}
-            fontSize="1.25rem"
+            fontSize={["4rem","1.25rem"]}
             lineHeight="1.56rem"
             color="Dark.700"
           >
@@ -38,10 +47,10 @@ export function RankedCitiesVisited({
 
           <Text
             fontWeight={500}
-            fontSize="1rem"
+            fontSize={["3rem","1rem"]}
             lineHeight="1.625rem"
             color="Dark.500"
-            mt="0.75rem"
+            mt={["5rem","0.75rem"]}
           >
             {countryName}
           </Text>
@@ -50,9 +59,10 @@ export function RankedCitiesVisited({
         <Image
           src={flag}
           alt={countryName}
-          h="1.875rem"
-          w="1.875rem"
+          h={["7rem", "1.875rem"]}
+          w={["7rem", "1.875rem"]}
           borderRadius="100%"
+          m={['6rem 3rem', "0rem"]}
         />
       </Flex>
     </Box>

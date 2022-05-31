@@ -1,0 +1,55 @@
+.swiper-button-next, .swiper-button-prev { 
+  height: 3.75rem !important;
+  width: 3.75rem !important;
+  color: #FFBA08 !important;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 1.875rem !important;
+}
+
+.swiper-pagination-bullet { 
+  height: 1rem !important;
+  width: 1rem !important;
+  background-color: #999999 !important;
+}
+
+.swiper-pagination-bullet-active {
+  height: 1rem !important;
+  width: 1rem !important;
+  background-color: #FFBA08 !important;
+}
+
+/* Responsividade */
+@media (max-width: 375px) {
+  .swiper-button-next, .swiper-button-prev { 
+    height: 3.75rem !important;
+    width: 3.75rem !important;
+    color: #FFBA08 !important;
+  }
+  
+  .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 3rem !important;
+  }
+  
+  .swiper-button-next::after {
+    margin-right: 2rem !important;
+  }
+
+  .swiper-button-prev::after {
+    margin-left: 2rem !important;
+  }
+  
+  .swiper-pagination-bullet { 
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    margin: 0.5rem !important;
+    background-color: #999999 !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    background-color: #FFBA08 !important;
+  }
+}

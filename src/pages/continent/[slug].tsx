@@ -1,14 +1,11 @@
-import { Box, Flex } from '@chakra-ui/react';
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next';
 import { useEffect, useState } from 'react';
 
 import { Bio } from '../../components/Continents/Bio';
 import { Cities } from '../../components/Continents/Cities';
 import { ContinentBanner } from '../../components/Continents/ContinentBanner';
-import { Header } from "../../components/Header";
+import { Flex } from '@chakra-ui/react';
 import { Info } from '../../components/Continents/Info';
 import { api } from '../../services/api';
-import { useContinent } from '../../context/ContinentContext';
 import { useRouter } from 'next/router';
 
 interface ContinentProps {
@@ -49,10 +46,10 @@ export default function Continent() {
       />
       
       <Flex
-        margin='5rem 8.75rem'
-        alignItems='center'
+        margin={['5rem 3rem', '5rem 8.75rem']}
+        alignItems={['flex-start','center']}
         justifyContent='space-between'
-        h='13.20rem'
+        flexDirection={['column','row']}
       >
         <Bio 
           phrase={continent.continentBio}

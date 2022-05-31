@@ -16,21 +16,22 @@ export function InfoItem({
       position="relative"
       h="6.25rem"
       display="flex"
-      alignItems="center"
+      alignItems={["flex-start","center"]}
       flexDirection="column"
     >
       <Text
         fontWeight={600}
-        fontSize="3rem"
+        fontSize={["5.5rem","3rem"]}
         color="Highlight"
         lineHeight="4.5rem"
+        mb={['3rem', 0]}
       >
         {infoAmount}
       </Text>
       <Text
         as="span"
-        fontSize="1.5rem"
-        color="Dark.500"
+        fontSize={["4rem","1.5rem"]}
+        color={["Dark.800","Dark.500"]}
         lineHeight="2.25rem"
       >
         {infoAmountDescription}
@@ -39,10 +40,11 @@ export function InfoItem({
         <Tooltip label='Mais Informações'>
           <Image
             src="/info.png" 
-            alt="info" 
+            alt="info"
+            height={['2.2rem','1rem']}
             position="absolute"
-            right='-5'
-            bottom='0.5'
+            right={['-60px','-5']}
+            bottom={['-60px','0.5']}
           />
         </Tooltip>
       )}

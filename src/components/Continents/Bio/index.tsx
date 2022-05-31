@@ -7,9 +7,9 @@ interface BioProps {
 export function Bio({phrase}: BioProps) {
   return (
     <Text
-      fontSize="1.5rem"
+      fontSize={["3rem","1.5rem"]}
       textAlign="justify"
-      w="37.5rem"
+      w={["100%","37.5rem"]}
     >
       {phrase}
     </Text>

@@ -1,29 +1,10 @@
-import { Box, Divider, Text } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { Divider, Text, } from '@chakra-ui/react';
 
-import { GetStaticProps } from 'next';
-import { Header } from "../components/Header";
 import { HomeBanner } from '../components/Home/HomeBanner';
 import { Slides } from '../components/Home/Slides';
 import { TravelSection } from '../components/Home/TravelSection';
-import { api } from '../services/api';
-
-interface ContinentsProps {
-  id: number;
-  name: string;
-  countryPhrase: string;
-  slideImage: string;
-}
 
 export default function Home() {
-  const [continents, setContinents] = useState<ContinentsProps[]>([]);
-  
-  useEffect(() => {
-    api.get('/continents').then(response => {
-      setContinents(response.data);
-    })
-  }, [])
-
   return (
     <>
       <HomeBanner />
@@ -31,7 +12,7 @@ export default function Home() {
       <TravelSection />
       
       <Divider 
-        w={20}
+        w='5.6rem'
         h={0.5}
         bg='Dark.700'
         m='0 auto'
@@ -39,7 +20,8 @@ export default function Home() {
 
       <Text
         as='h1'
-        fontSize='2.25rem'
+        fontSize={['3.8rem','2.25rem']}
+        fontWeight={500}
         align='center'
         mt={14}
       >

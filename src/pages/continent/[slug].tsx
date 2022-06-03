@@ -1,9 +1,11 @@
+import { Flex, Spinner } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import { Bio } from '../../components/Continents/Bio';
 import { Cities } from '../../components/Continents/Cities';
 import { ContinentBanner } from '../../components/Continents/ContinentBanner';
-import { Flex } from '@chakra-ui/react';
+import Head from 'next/head';
+import { Header } from '../../components/Header';
 import { Info } from '../../components/Continents/Info';
 import { api } from '../../services/api';
 import { useRouter } from 'next/router';
@@ -20,6 +22,7 @@ interface ContinentProps {
 
 export default function Continent() {
   const [continent, setContinent] = useState<ContinentProps>({} as ContinentProps);
+  const [isLoading, setIsLoading] = useState(true);
   const { asPath } = useRouter();
 
   const slug = asPath.split('/continent/')[1].toString();
@@ -32,40 +35,97 @@ export default function Continent() {
 
       if(continentInfo !== null) {
         setContinent(continentInfo)
-      } 
+        setIsLoading(false);
+      }
     }
     loadData();
   }, [asPath, slug])
 
-  return(
-    <>
+  return isLoading ? (
+    <Flex
+      direction="column"
+    >
+      {isLoading ? 
+        <Head>
+          <title>
+            Carregando...
+          </title>
+        </Head> 
+        : 
+        <Head>
+          <title>Worldtrip | {continent.name}</title>
+        </Head>}
 
-      <ContinentBanner 
-        name={continent.name}
-        image={continent.bannerImage}
-      />
+      <Header />
       
       <Flex
-        margin={['5rem 3rem', '5rem 8.75rem']}
-        alignItems={['flex-start','center']}
-        justifyContent='space-between'
-        flexDirection={['column','row']}
+        w="100%"
+        h="80vh"
+        maxW={1440}
+        mx="auto"
+        flexDirection="column"
+        alignItems='center'
+        justifyContent="center"
       >
-        <Bio 
-          phrase={continent.continentBio}
+        <Spinner 
+          thickness='4px'
+          speed='0.65s'
+          emptyColor='gray.600'
+          color='Highlight'
+          size='xl' 
         />
-
-        <Info 
-          countrys={continent.countrys}
-          languages={continent.languages}
-          rankCitiesVisited={continent.rankCitiesVisited}
-        />
-        
       </Flex>
+    </Flex>
+  ) : (
+    <Flex
+      direction="column"
+    >
+      {isLoading ? 
+        <Head>
+          <title>
+            Carregando...
+          </title>
+        </Head> 
+        : 
+        <Head>
+          <title>Worldtrip | {continent.name}</title>
+        </Head>}
 
-      <Cities 
-        continentId={continent.id}
-      />
-    </>
-  );
+      <Header />
+      
+      <Flex
+        w="100%"
+        maxW={1440}
+        mx="auto"
+        flexDirection="column"
+      >
+        <ContinentBanner 
+          name={continent.name}
+          image={continent.bannerImage}
+        />
+
+        <Flex
+          margin={['1.5rem 1rem 2rem', '1.5rem 1rem 2rem', '2.5rem 4.5rem', '5rem 8.75rem']}
+          alignItems={['flex-start', 'center']}
+          justifyContent='space-between'
+          flexDirection={['column', 'column', 'row', 'row']}
+        >
+          <Bio 
+            phrase={continent.continentBio}
+          />
+
+          <Info 
+            countrys={continent.countrys}
+            languages={continent.languages}
+            rankCitiesVisited={continent.rankCitiesVisited}
+            continentId={continent.id}
+          />
+        </Flex>
+
+        <Cities 
+          continentId={continent.id}
+        />
+      </Flex>
+    </Flex>
+  )
 }

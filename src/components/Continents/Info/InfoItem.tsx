@@ -1,9 +1,14 @@
-import { Box, Image, Text, Tooltip } from "@chakra-ui/react";
+import { Flex, Image, Text, Tooltip } from "@chakra-ui/react";
+
+interface MoreCities {
+  name: string;
+}
 
 interface InfoItemProps {
   infoToolTip?: boolean;
   infoAmount: number;
   infoAmountDescription: string;
+  moreCities?: MoreCities;
 }
 
 export function InfoItem({
@@ -12,42 +17,43 @@ export function InfoItem({
   infoToolTip = false,
 }: InfoItemProps) {
   return (
-   <Box
+   <Flex
       position="relative"
-      h="6.25rem"
-      display="flex"
       alignItems={["flex-start","center"]}
       flexDirection="column"
     >
       <Text
         fontWeight={600}
-        fontSize={["5.5rem","3rem"]}
+        fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}
         color="Highlight"
-        lineHeight="4.5rem"
-        mb={['3rem', 0]}
       >
         {infoAmount}
       </Text>
       <Text
         as="span"
-        fontSize={["4rem","1.5rem"]}
+        fontSize={["1.125rem", "1.125rem", "1.25rem", "1.5rem"]}
+        fontWeight={400}
         color={["Dark.800","Dark.500"]}
-        lineHeight="2.25rem"
       >
         {infoAmountDescription}
       </Text>
       {infoToolTip && (
-        <Tooltip label='Mais Informações'>
+        <Tooltip
+          label="Mais informações"
+          fontSize={14}
+          textAlign="justify"
+          p='1 1'
+        >
           <Image
             src="/info.png" 
             alt="info"
-            height={['2.2rem','1rem']}
+            height={['0.625rem', '0.625rem', '1.1rem', '1rem']}
             position="absolute"
-            right={['-60px','-5']}
-            bottom={['-60px','0.5']}
+            right={['-5px', '-15px', '-6',  '-6']}
+            bottom={['10%', '10%', '1.5', '2']}
           />
         </Tooltip>
       )}
-    </Box>
+    </Flex>
   );
 }

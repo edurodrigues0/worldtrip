@@ -9,7 +9,7 @@ export function BannerTexts() {
     <Box color="Light.200">
       <Text
         fontWeight={500}
-        fontSize={["3.5rem", "2.25rem"]}
+        fontSize={["1.25rem", "1.5rem", "2.25rem"]}
       >
         5 Continentes,
         <br />
@@ -18,7 +18,7 @@ export function BannerTexts() {
       
       <Text
         fontWeight={400}
-        fontSize={["2.5rem","1.25rem"]}
+        fontSize={["0.825rem","1rem", "1.25rem"]}
         marginTop="1.25rem"
       >
         Chegou a hora de tirar do papel a viagem que {!isWideVersion && <br />} você {isWideVersion && <br />}

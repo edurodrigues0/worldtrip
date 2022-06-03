@@ -1,4 +1,8 @@
-import { Link, Text } from "@chakra-ui/react";
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Link, Text, useBreakpointValue } from "@chakra-ui/react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,6 +10,10 @@ import styles from "./styles.module.css"
 import { useContinent } from "../../../context/ContinentContext";
 
 export function Slides() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  })
   const {continents, selectedContinent} = useContinent()
 
   return (
@@ -30,16 +38,20 @@ export function Slides() {
               justifyContent="center"
               flexDirection="column"
               bgImage={continent.slideImage}
-              bgRepeat={"round"}
+              bgRepeat="round"
               _hover={{ textDecoration: 'none'}}
               href={`/continent/${continent.slug}`}
             >
-              <Text fontSize={["5rem", "3rem"]} fontWeight="bold">
+              <Text fontSize={["1.5rem", "3rem"]} fontWeight="bold">
                 {continent.name}
               </Text>
-              <Text fontSize={["2.8rem", "1.5rem"]} fontWeight="bold">
-                {continent.continentPhrase}
-              </Text>
+              {
+                isWideVersion 
+                  && 
+                  <Text fontSize= "1.5rem" fontWeight="bold">
+                    {continent.continentPhrase}
+                  </Text>
+              }
             </Link>
           </SwiperSlide>
         );

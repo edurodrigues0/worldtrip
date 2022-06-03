@@ -8,6 +8,9 @@ export function makeServer() {
       }),
       city: Model.extend({
         continent: belongsTo(),
+      }),
+      moreCity: Model.extend({
+        continent: belongsTo(),
       })
     },
     seeds(server) {
@@ -56,6 +59,7 @@ export function makeServer() {
             continentPhrase: 'Neque porro quisquam',
             slideImage: "/Country/America-Do-Norte.png",
             bannerImage: "/Country/America-Do-NorteBanner.png",
+            continentBio: "Sed sed ante tortor. Curabitur pellentesque neque vitae mauris dictum laoreet fermentum ac nibh. Etiam in metus auctor augue tristique congue. Proin nec purus ac purus fringilla placerat. Nulla vel egestas massa, ac iaculis libero. Mauris vestibulum, lorem eu pellentesque pulvinar, mi felis imperdiet diam.",
             countrys: 24,
             rankCitiesVisited: 10,
             languages: 6,
@@ -246,7 +250,59 @@ export function makeServer() {
             image: "https://cdn.pixabay.com/photo/2017/03/20/22/17/auckland-2160551__340.jpg",
             flag: "https://cdn.pixabay.com/photo/2013/07/13/14/16/new-zealand-162373_960_720.png"
           }
-        ]
+        ],
+        moreCities: [
+          {
+            id: 1,
+            name: "Hong Kong",
+            continentId: 2
+          },
+          {
+            id: 2,
+            name: "Bangkok",
+            continentId: 2
+          },
+          {
+            id: 3,
+            name: "London",
+            continentId: 1
+          },
+          {
+            id: 4,
+            name: "Macau",
+            continentId: 2
+          },
+          {
+            id: 5,
+            name: "Singapore",
+            continentId: 2
+          },
+          {
+            id: 6,
+            name: "Paris",
+            continentId: 1
+          },
+          {
+            id: 7,
+            name: "Dubai",
+            continentId: 5
+          },
+          {
+            id: 8,
+            name: "New York City",
+            continentId: 4
+          },
+          {
+            id: 9,
+            name: "Buenos Aires City",
+            continentId: 3
+          },
+          {
+            id: 10,
+            name: "Melbourne",
+            continentId: 6,
+          }
+        ],
       })
     },
     routes() {
@@ -264,6 +320,11 @@ export function makeServer() {
       this.get('/cities/:continentId', (schema, request) => {
         const continentId = request.params.continentId;
         return schema.db.cities.where({continentId: continentId})
+      })
+
+      this.get('/morecities/:continentId', (schema, request) => {
+        const continentId = request.params.continentId;
+        return schema.db.moreCities.where({continentId: continentId})
       })
 
       this.namespace = '';

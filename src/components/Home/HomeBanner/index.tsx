@@ -11,10 +11,10 @@ export function HomeBanner() {
     <Box
       bgImage="./Background.png"
       bgRepeat="round"
-      h={["29.5rem","20rem"]}
+      h={["10.1875rem", "12.5rem", "20rem"]}
       w="100%"
       position="relative"
-      padding={["1.75rem 2rem 1.75rem 3rem","5rem 8.75rem"]}
+      padding={["1.75rem 1.625rem 1.75rem 1rem", "1.75rem 1.625rem 1.75rem 1rem" , "5rem 8.75rem"]}
       display="flex"
       alignItems="center"
       justifyContent="space-between"

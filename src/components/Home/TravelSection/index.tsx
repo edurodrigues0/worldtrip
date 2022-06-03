@@ -10,15 +10,21 @@ import { TravelItems } from "./TravelItems";
 
 export function TravelSection() {
   const isWideVersion = useBreakpointValue({
-    base: false,
-    lg: true,
+    sm: false,
+    md: true
   });
+
+  const responsiveStackSpacing = useBreakpointValue({
+    md: 12,
+    lg: 36
+  })
+
   return (
     <Box w="100%" m="0 auto">
       {isWideVersion ? (
         <Stack
-          spacing={36}
-          direction={["column", "row"]}
+          spacing={responsiveStackSpacing}
+          direction="row"
           margin="5rem 8rem"
           justify="center"
         >
@@ -34,12 +40,12 @@ export function TravelSection() {
         </Stack>
       ) : (
         <Grid
-          margin={["6rem 8rem", "5rem 8rem"]}
-          templateColumns="repeat(2, 1fr)"
+          margin="2.25rem 3.125rem"
+          templateColumns="repeat(2)"
           templateRows="repeat(2, 1fr)"
-          gap={16}
+          gap={6}
         >
-          <GridItem px='3rem' display='flex' justifyContent='flex-start'>
+          <GridItem display='flex' justifyContent='flex-start'>
             <TravelItems image="/TravelIcons/ElipseIcon.png" title="vida noturna" />
           </GridItem>
           
@@ -47,11 +53,11 @@ export function TravelSection() {
             <TravelItems image="/TravelIcons/ElipseIcon.png" title="praia" />
           </GridItem>
 
-          <GridItem px='3rem' display='flex' justifyContent='flex-start'>
+          <GridItem display='flex' justifyContent='flex-start'>
             <TravelItems image="/TravelIcons/ElipseIcon.png" title="moderno" />
           </GridItem>
 
-          <GridItem px='5rem' display='flex' justifyContent='flex-start'>
+          <GridItem display='flex' justifyContent='flex-start'>
             <TravelItems image="/TravelIcons/ElipseIcon.png" title="clássico" />
           </GridItem>
           

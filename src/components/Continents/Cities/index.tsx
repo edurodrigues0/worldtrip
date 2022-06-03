@@ -30,12 +30,12 @@ export function Cities({continentId}: CitiesProps) {
   }, [continentId])
 
   return (
-    <Flex w="73rem" margin={["15rem 3rem","8.75rem"]} flexDirection="column">
-      <Text fontWeight={500} fontSize={["5rem","2.4rem"]} lineHeight="3.375rem" mb="2.5rem">
+    <Flex margin={["0rem 3rem 1rem", "0rem 3rem 1rem", "0rem 3rem 1rem", "8.75rem"]} flexDirection="column">
+      <Text fontWeight={500} fontSize={["1.5rem","2.4rem"]} mb={["1.25rem","2.5rem"]}>
         Cidades +100
       </Text>
 
-      <SimpleGrid spacing={['1rem','3rem']} columns={[1, 4]} margin={['4rem auto', 0]}>
+      <SimpleGrid spacing={['1.25rem', '1.25rem', '1.25rem', '3rem']} columns={[1, 1, 2, 4]} margin={['0 auto', 0]}>
         {
           cities.map(city => {
             return(

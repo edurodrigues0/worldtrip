@@ -1,5 +1,13 @@
 import { extendTheme } from '@chakra-ui/react';
 
+const breakpoints = {
+  sm: '320px',
+  md: '568px',
+  lg: '960px',
+  xl: '1200px',
+  '2xl': '1536px',
+}
+
 export const global = extendTheme({
   colors: {
     Highlight: '#FFBA08',
@@ -22,8 +30,8 @@ export const global = extendTheme({
       body: {
         background: "Light.200",
         color: 'Dark.700',
-        overflowX: "hidden"
-      }
+      },
     }
-  }
+  },
+  breakpoints
 })
